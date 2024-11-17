@@ -47,50 +47,38 @@ namespace ListaAlumnos
                                 }
         }
 
-        //BORRAR DGV
+        //BORRAR COMPLETO DGV
         private void btBorrarLista_Click(object sender, EventArgs e)
         {
-           
-            //DGV.Rows.Clear();
+            Alumnos.BorrarLista();
         }
 
-        //BUSCAR DEL DGV CON DNI
+        //BUSCAR ALUMNO DESDE EL DGV CON DNI
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            Alumno Alumno = Buscar(tbDNI.Text);
-            
-        }
-        //Metodo? buscar
-        public  Alumno Buscar(string text)
-        {
-           // throw new NotImplementedException();
-            Alumno alumnob = Buscar(tbDNI.Text);
-
-            if (alumnob.DNI != tbDNI.Text)
+            Alumnos.Buscar(tbParaBuscar.Text);
             {
-                tbNombre.Text = alumnob.Nombre;
-                tbApellido.Text = alumnob.Apellido;
-                tbDNI.Text = alumnob.DNI;
-                tbCondicion.Text = alumnob.Condicion;
-
-                tbNombre.Focus();
-            }
-            else
-            {
-                tbDNI.Text = "no existe";
-                tbDNI.SelectAll();
-                tbDNI.Focus();
+                if (tbParaBuscar.TextLength >= 1) tbParaBuscar.Text = "";
             }
         }
-        //BOTON PARA ACTUALIZAR EN DGV
+       
+        //BOTON PARA ACTUALIZAR ALUMNO EN DGV
         private void btActualizar_Click(object sender, EventArgs e)
         {
-
+            Alumnos.Actualizar(DGV.CurrentRow.Cells[2].Value.ToString(),tbCondicion.Text);
+            {
+                if (tbCondicion.TextLength >= 1) tbCondicion.Text = "";
+            }
         }
         //BORRAR UN ALUMNO DEL DGV
         private void btBorrar_Click(object sender, EventArgs e)
         {
-
+            Alumnos.BorrarAlumno(DGV.CurrentRow.Cells[2].Value.ToString());
+        }
+        //MOSTRAR TODOS LOS ALUMNOS DEL DGV
+        private void btVerTodos_Click(object sender, EventArgs e)
+        {
+            Alumnos.CargarTodos();
         }
     }
 }

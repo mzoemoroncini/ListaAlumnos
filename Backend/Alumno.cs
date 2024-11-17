@@ -23,6 +23,8 @@ namespace Backend
                         DNI         = dni;
                         Condicion   = condicion;
         }
+        public Alumno() 
+        { }
 
     }
 }

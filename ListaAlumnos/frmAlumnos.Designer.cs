@@ -47,6 +47,7 @@
             this.lRojo = new System.Windows.Forms.Label();
             this.btActualizar = new System.Windows.Forms.Button();
             this.btBorrar = new System.Windows.Forms.Button();
+            this.btVerTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             this.btAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btAgregar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btAgregar.Location = new System.Drawing.Point(478, 143);
+            this.btAgregar.Location = new System.Drawing.Point(478, 139);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(143, 35);
             this.btAgregar.TabIndex = 4;
@@ -149,11 +150,14 @@
             // 
             // DGV
             // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
             this.DGV.BackgroundColor = System.Drawing.SystemColors.Window;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV.Location = new System.Drawing.Point(12, 143);
+            this.DGV.Location = new System.Drawing.Point(12, 129);
             this.DGV.Name = "DGV";
-            this.DGV.Size = new System.Drawing.Size(460, 235);
+            this.DGV.ReadOnly = true;
+            this.DGV.Size = new System.Drawing.Size(460, 272);
             this.DGV.TabIndex = 9;
             // 
             // label5
@@ -205,7 +209,7 @@
             this.btBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btBuscar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btBuscar.Location = new System.Drawing.Point(478, 291);
+            this.btBuscar.Location = new System.Drawing.Point(478, 303);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(143, 54);
             this.btBuscar.TabIndex = 16;
@@ -216,7 +220,7 @@
             // tbParaBuscar
             // 
             this.tbParaBuscar.BackColor = System.Drawing.Color.White;
-            this.tbParaBuscar.Location = new System.Drawing.Point(478, 351);
+            this.tbParaBuscar.Location = new System.Drawing.Point(478, 363);
             this.tbParaBuscar.Name = "tbParaBuscar";
             this.tbParaBuscar.Size = new System.Drawing.Size(143, 26);
             this.tbParaBuscar.TabIndex = 17;
@@ -242,7 +246,7 @@
             this.btActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btActualizar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btActualizar.Location = new System.Drawing.Point(478, 184);
+            this.btActualizar.Location = new System.Drawing.Point(478, 180);
             this.btActualizar.Name = "btActualizar";
             this.btActualizar.Size = new System.Drawing.Size(143, 35);
             this.btActualizar.TabIndex = 19;
@@ -259,7 +263,7 @@
             this.btBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btBorrar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBorrar.ForeColor = System.Drawing.Color.Black;
-            this.btBorrar.Location = new System.Drawing.Point(478, 225);
+            this.btBorrar.Location = new System.Drawing.Point(478, 221);
             this.btBorrar.Name = "btBorrar";
             this.btBorrar.Size = new System.Drawing.Size(143, 35);
             this.btBorrar.TabIndex = 20;
@@ -267,12 +271,30 @@
             this.btBorrar.UseVisualStyleBackColor = false;
             this.btBorrar.Click += new System.EventHandler(this.btBorrar_Click);
             // 
+            // btVerTodos
+            // 
+            this.btVerTodos.BackColor = System.Drawing.Color.Yellow;
+            this.btVerTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btVerTodos.FlatAppearance.BorderSize = 0;
+            this.btVerTodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btVerTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btVerTodos.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVerTodos.ForeColor = System.Drawing.Color.Black;
+            this.btVerTodos.Location = new System.Drawing.Point(478, 262);
+            this.btVerTodos.Name = "btVerTodos";
+            this.btVerTodos.Size = new System.Drawing.Size(143, 35);
+            this.btVerTodos.TabIndex = 21;
+            this.btVerTodos.Text = "VER TODOS";
+            this.btVerTodos.UseVisualStyleBackColor = false;
+            this.btVerTodos.Click += new System.EventHandler(this.btVerTodos_Click);
+            // 
             // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(640, 463);
+            this.Controls.Add(this.btVerTodos);
             this.Controls.Add(this.btBorrar);
             this.Controls.Add(this.btActualizar);
             this.Controls.Add(this.lRojo);
@@ -323,6 +345,7 @@
         private System.Windows.Forms.Label lRojo;
         private System.Windows.Forms.Button btActualizar;
         private System.Windows.Forms.Button btBorrar;
+        private System.Windows.Forms.Button btVerTodos;
     }
 }
 
